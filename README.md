@@ -24,3 +24,6 @@ And many workers to act as a consumer too.
 ## Fanout
 
 Wer have just 2 workers but is ok to see the basic usage of that type of exchanges
+
+You can see my notations here but is in portuguese:
+https://excalidraw.com/#json=sLbRKrMt2_D6QufNI_3FR,t8OsUnsbHEF8BDffuOWBGQ
