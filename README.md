@@ -2,7 +2,10 @@ It's just a playgroud to training my rabbitmq skills!
 But if you want use, it's simple.
 
 ## Docker
-use ```bash docker compose up -d `` to star containers
+
+use ```bash
+bash docker compose up -d 
+``` to star containers
 after start docker you need run composer install inside the docker ´´´ docker compose exec app composer install ´´
 
 You have 2 directory to play
