@@ -5,7 +5,7 @@ But if you want use, it's simple.
 
 use ```bash
 bash docker compose up -d 
-``` to star containers
+`` to star containers
 after start docker you need run composer install inside the docker ´´´ docker compose exec app composer install ´´
 
 You have 2 directory to play
