@@ -1,0 +1,39 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - rabbitmq
+    networks:
+      - rabbitnet
+
+  web:
+    image: nginx:alpine
+    container_name: web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - rabbitnet
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbit
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - rabbitnet
+
+networks:
+  rabbitnet:
+    driver: bridge
